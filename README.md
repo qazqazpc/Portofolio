@@ -1,6 +1,5 @@
 # Portofolio
 
-<!DOCTYPE html>
 <html>
 <head>
     <title>My Portfolio</title>
