@@ -54,7 +54,7 @@ p {
 .snowflake {
   width: var(--size);
   height: var(--size);
-  $gradient: linear-gradient(to bottom, blue, green, yellow, orange, red, purple, pink);
+  $colors: (blue, green, yellow, orange, red, purple, pink);
   border-radius: 50%;
   position: absolute;
   top: -5vh;
@@ -76,9 +76,9 @@ p {
 @for $i from 1 through 10 {
   .snowflake:nth-child(#{$i}) {
     --size: #{random(5) * 0.2}vw;
-    --left-ini: #{random(20) - 10}vw;
-    --left-end: #{random(20) - 10}vw;
-    background: $gradient;
+    --left-ini: #{random(20) - 100}vw;
+    --left-end: #{random(20) - 100}vw;
+    background: $colors[random(length($colors))];
     animation: snowfall #{5 + random(10)}s linear infinite;
     animation-delay: -#{random(10)}s;
   }
