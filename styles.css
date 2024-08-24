@@ -4,6 +4,7 @@ body {
     align-items: center;
     height: 100vh;
 }
+
 h1 {
     font-size: 24px;
     font-weight: bold;
@@ -51,38 +52,28 @@ p {
 }
 
 .snowflake {
-  width: var(--size);
-  height: var(--size);
-  background: white;
-  border-radius: 50%;
-  position: absolute;
-  top: -5vh;
-  left: var(--left);
-  animation: snowfall var(--speed) linear infinite;
-  animation-delay: var(--delay);
+    width: var(--size);
+    height: var(--size);
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: -5vh;
+    left: var(--left);
+    animation: snowfall var(--speed) linear infinite;
+    animation-delay: var(--delay);   
+
 }
 
 @keyframes snowfall {
-  0% {
-    transform: translate3d(var(--left-ini), 0, 0);
-  }
-  100% {
-    transform: translate3d(var(--left-end), 110vh, 0);
-  }
-}
-
-@for $i from 1 through 50 {
-    .snowflake:nth-child(#{$i}) {
-        --size: #{random(5) * 0.2}vw;
-        --left-ini: #{random(20) - 10}vw;
-        --left-end: #{random(20) - 10}vw;
-        left: #{random(100)}vw;
-        animation: snowfall #{5 + random(10)}s linear infinite;
-        animation-delay: -#{random(10)}s;
+    0% {
+        transform: translate3d(var(--left-ini), 0, 0);
+    }
+    100% {
+        transform: translate3d(var(--left-end), 110vh, 0);
     }
 }
 
-
-.snowflake:nth-child(6n) {
+.snowflake:nth-child(6n)   
+ {
     filter: blur(1px);
 }
