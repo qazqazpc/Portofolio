@@ -50,36 +50,3 @@ p {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     width: 230px;
 }
-
-.snowflake {
-  width: var(--size);
-  height: var(--size);
-  $colors: (blue, green, yellow, orange, red, purple, pink);
-  border-radius: 50%;
-  position: absolute;
-  top: -5vh;
-  z-index: -1;  
-  left: var(--left);
-  animation: snowfall var(--speed) linear infinite;
-  animation-delay: var(--delay);
-}
-
-@keyframes snowfall {
-  0% {
-    transform: translate3d(var(--left-ini), 0, 0);
-  }
-  100% {
-    transform: translate3d(var(--left-end), 110vh, 0);
-  }
-}
-
-@for $i from 1 through 10 {
-  .snowflake:nth-child(#{$i}) {
-    --size: #{random(5) * 0.2}vw;
-    --left-ini: #{random(20) - 100}vw;
-    --left-end: #{random(20) - 100}vw;
-    background: $colors[random(length($colors))];
-    animation: snowfall #{5 + random(10)}s linear infinite;
-    animation-delay: -#{random(10)}s;
-  }
-}
