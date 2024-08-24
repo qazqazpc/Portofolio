@@ -54,7 +54,7 @@ p {
 .snowflake {
     width: var(--size);
     height: var(--size);
-    background: white;
+    background: blue;
     border-radius: 50%;
     position: absolute;
     top: -5vh;
