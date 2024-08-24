@@ -58,6 +58,7 @@ p {
     border-radius: 50%;
     position: absolute;
     top: -5vh;
+    z-index: -1;
     left: var(--left);
     animation: snowfall var(--speed) linear infinite;
     animation-delay: var(--delay);   
